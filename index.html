@@ -106,7 +106,7 @@
           <p style="margin:0 0 clamp(20px,2.5vw,48px);font-size:clamp(15px,1.875vw,36px);line-height:1.34;color:#BBCE6F">{{ t.themesIntro }}</p>
           <sc-for list="{{ themes }}" as="th" hint-placeholder-count="6">
             <div style="display:flex;gap:clamp(10px,1.15vw,22px);margin-bottom:clamp(18px,2.5vw,48px);font-size:clamp(15px,1.875vw,36px);line-height:1.34">
-              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#FAFF8D;font-weight:700">&gt;</span>
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#FAFF8D;font-weight:700">&bull;</span>
               <p style="margin:0;color:#FAFF8D;font-weight:700">{{ th.label }}<span style="color:#BBCE6F;font-style:italic;font-weight:400"> {{ th.note }}</span></p>
             </div>
           </sc-for>
@@ -196,8 +196,8 @@ const STRINGS = {
     formatsP2: 'Accepted abstracts appear in the conference program, with publication opportunities to be confirmed closer to the event. This is an on-site event; authors need to present in person.',
     langLabel: 'Language', langValue: 'English, French & Dutch',
     whoLabel: 'Who it\u2019s for?', whoValue: 'Public sector, industry, researchers, artists, civil society organizations',
-    chips: ['> Talks, Presentations & Panels', '> Workshops', '> Exhibition', '> Performance'],
-    otherLabel: '> Other:',
+    chips: ['• Talks, Presentations & Panels', '• Workshops', '• Exhibition', '• Performance'],
+    otherLabel: '• Other:',
     otherPre: 'If you have any other ideas or proposals that don\u2019t fit into any of the categories,',
     otherLink: 'please share them with us',
     otherPost: '. We can then discuss how to create a space for them during the event.',
@@ -249,8 +249,8 @@ const STRINGS = {
     formatsP2: 'Les r\u00E9sum\u00E9s accept\u00E9s figureront dans le programme de la conf\u00E9rence ; les possibilit\u00E9s de publication seront confirm\u00E9es \u00E0 l\u2019approche de l\u2019\u00E9v\u00E9nement. Il s\u2019agit d\u2019un \u00E9v\u00E9nement en pr\u00E9sentiel : les auteur\u00B7es doivent pr\u00E9senter sur place.',
     langLabel: 'Langue', langValue: 'Anglais, fran\u00E7ais et n\u00E9erlandais',
     whoLabel: 'Pour qui ?', whoValue: 'Secteur public, industrie, chercheur\u00B7es, artistes, organisations de la soci\u00E9t\u00E9 civile',
-    chips: ['> Conf\u00E9rences, pr\u00E9sentations et tables rondes', '> Ateliers', '> Exposition', '> Performance'],
-    otherLabel: '> Autre :',
+    chips: ['• Conf\u00E9rences, pr\u00E9sentations et tables rondes', '• Ateliers', '• Exposition', '• Performance'],
+    otherLabel: '• Autre :',
     otherPre: 'Si vous avez d\u2019autres id\u00E9es ou propositions qui n\u2019entrent dans aucune de ces cat\u00E9gories,',
     otherLink: 'partagez-les avec nous',
     otherPost: '. Nous pourrons ensuite voir comment leur cr\u00E9er un espace pendant l\u2019\u00E9v\u00E9nement.',
@@ -302,8 +302,8 @@ const STRINGS = {
     formatsP2: 'Aanvaarde abstracts worden opgenomen in het conferentieprogramma; publicatiemogelijkheden worden dichter bij het evenement bevestigd. Dit is een evenement op locatie: auteurs presenteren in persoon.',
     langLabel: 'Taal', langValue: 'Engels, Frans en Nederlands',
     whoLabel: 'Voor wie?', whoValue: 'Publieke sector, industrie, onderzoekers, kunstenaars, maatschappelijke organisaties',
-    chips: ['> Lezingen, presentaties & panels', '> Workshops', '> Tentoonstelling', '> Performance'],
-    otherLabel: '> Andere:',
+    chips: ['• Lezingen, presentaties & panels', '• Workshops', '• Tentoonstelling', '• Performance'],
+    otherLabel: '• Andere:',
     otherPre: 'Heeft u andere idee\u00EBn of voorstellen die in geen van deze categorie\u00EBn passen,',
     otherLink: 'laat het ons weten',
     otherPost: '. We bekijken dan samen hoe we er tijdens het evenement ruimte voor kunnen maken.',
