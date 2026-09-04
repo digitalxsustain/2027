@@ -88,13 +88,13 @@
         <div style="flex:47 1 300px;font-size:clamp(16px,2.08vw,40px);line-height:1.35;color:#31563D">
           <sc-for list="{{ chips }}" as="chip" hint-placeholder-count="4">
             <div style="margin-bottom:clamp(10px,1.15vw,22px)">
-              <span style="background: #FAFF8D; padding: 0.12em 0.25em; box-decoration-break: clone; -webkit-box-decoration-break: clone; font-size: 20px">{{ chip }}</span>
+              <span style="background: #FAFF8D; padding: 0.12em 0.25em; box-decoration-break: clone; -webkit-box-decoration-break: clone; font-size: clamp(16px,2.08vw,40px)">{{ chip }}</span>
             </div>
           </sc-for>
           <div style="margin-top:clamp(10px,1.15vw,22px)">
-            <span style="background: #FAFF8D; padding: 0.12em 0.25em; font-size: 20px">{{ t.otherLabel }}</span>
+            <span style="background: #FAFF8D; padding: 0.12em 0.25em; font-size: clamp(16px,2.08vw,40px)">{{ t.otherLabel }}</span>
             <span style="font-size:clamp(15px,1.875vw,36px);line-height:1.67"> {{ t.otherPre }}<a href="mailto:cigdem.yonder@ulb.be" style="color:#31563D;font-style:italic;text-decoration:underline">{{ t.otherLink }}</a>{{ t.otherPost }}</span>
-          </div><p style="margin: 1.15em 0 0; font-weight: 700; font-size: 21.825001px">{{ t.langLabel }}</p><p style="margin: 0; font-size: 21.825001px">{{ t.langValue }}</p><p style="margin: 1.15em 0 0; font-weight: 700; font-size: 21.825001px">{{ t.whoLabel }}</p><p style="margin: 0; font-size: 21.825001px">{{ t.whoValue }}</p>
+          </div><p style="margin: 1.15em 0 0; font-weight: 700; font-size: clamp(15px,1.875vw,36px)">{{ t.langLabel }}</p><p style="margin: 0; font-size: clamp(15px,1.875vw,36px)">{{ t.langValue }}</p><p style="margin: 1.15em 0 0; font-weight: 700; font-size: clamp(15px,1.875vw,36px)">{{ t.whoLabel }}</p><p style="margin: 0; font-size: clamp(15px,1.875vw,36px)">{{ t.whoValue }}</p>
         </div>
       </div>
     </section>
