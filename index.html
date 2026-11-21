@@ -104,10 +104,15 @@
         <h2 style="flex:1 1 200px;max-width:clamp(120px,25vw,485px);margin:0;font-size:clamp(26px,3.125vw,60px);line-height:1.1;color:#BBCE6F;font-weight:700">{{ t.themesTitle }}</h2>
         <div style="flex:2.4 1 320px;max-width:1000px">
           <p style="margin:0 0 clamp(20px,2.5vw,48px);font-size:clamp(15px,1.875vw,36px);line-height:1.34;color:#BBCE6F">{{ t.themesIntro }}</p>
-          <sc-for list="{{ themes }}" as="th" hint-placeholder-count="6">
-            <div style="display:flex;gap:clamp(10px,1.15vw,22px);margin-bottom:clamp(18px,2.5vw,48px);font-size:clamp(15px,1.875vw,36px);line-height:1.34">
-              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#FAFF8D;font-weight:700">&bull;</span>
-              <p style="margin:0;color:#FAFF8D;font-weight:700">{{ th.label }}<span style="color:#BBCE6F;font-style:italic;font-weight:400"> {{ th.note }}</span></p>
+          <sc-for list="{{ themes }}" as="th" hint-placeholder-count="3">
+            <div style="margin-bottom:clamp(28px,3.4vw,64px)">
+              <h3 style="margin:0 0 clamp(12px,1.4vw,26px);display:flex;gap:clamp(10px,1.15vw,22px);font-size:clamp(18px,2.08vw,40px);line-height:1.2;color:#FAFF8D;font-weight:700"><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace">{{ th.num }}</span><span>{{ th.title }}</span></h3>
+              <sc-for list="{{ th.items }}" as="it" hint-placeholder-count="3">
+                <div style="display:flex;gap:clamp(10px,1.15vw,22px);margin-bottom:clamp(14px,1.6vw,30px);font-size:clamp(15px,1.875vw,36px);line-height:1.34">
+                  <span style="color:#FAFF8D;font-weight:700">&bull;</span>
+                  <p style="margin:0;color:#FAFF8D;font-weight:700">{{ it.label }}<span style="color:#BBCE6F;font-weight:400"> {{ it.note }}</span></p>
+                </div>
+              </sc-for>
             </div>
           </sc-for>
         </div>
@@ -211,14 +216,23 @@ const STRINGS = {
     otherLink: 'please share them with us',
     otherPost: '. We can then discuss how to create a space for them during the event.',
     themesTitle: 'Themes',
-    themesIntro: 'Some of the themes we want to address during these two days are as follows:',
+    themesIntro: 'Share a project, a tool, a public policy… or even a failure that offers valuable lessons on one of the three main themes related to digital sustainability:',
     themes: [
-      { label: 'Twin transitions', note: '' },
-      { label: 'Environmental footprint of the internet:', note: 'from the materiality of infrastructures to data and energy-related questions' },
-      { label: 'Digital efficiency vs. sufficiency perspectives', note: '' },
-      { label: 'Digital sustainability in digital policy and governance', note: '' },
-      { label: 'Commons and the internet as a common good', note: '' },
-      { label: 'Community-based investigations and interventions', note: '' }
+      { num: '01', title: 'Materials, Resources, and Infrastructure', items: [
+        { label: 'Digital Infrastructure and Networks:', note: 'Antennas, cables, and mobile networks consume energy, materials, and public space, and they are often designed to handle peak demand. Have you worked on network energy consumption, infrastructure sharing, the decommissioning of old networks, or aging equipment?' },
+        { label: 'Green IT and IT for Green:', note: 'Have you measured the environmental impact of a digital service, or verified whether a “smart” project has actually delivered the promised savings?' },
+        { label: 'Circularity and Responsible Procurement:', note: 'Have you drafted specifications requiring refurbished or repairable equipment, or are you managing or participating in a repair initiative?' }
+      ] },
+      { num: '02', title: 'Design and Practices', items: [
+        { label: 'Digital Sufficiency:', note: 'Have you reduced the amount of data you create, use, or store, or extended the lifespan of your devices? Are you developing or working on digital services and devices that can function with less?' },
+        { label: 'Alternative AI:', note: 'Have you run a small AI model locally, or decided not to use AI at all? Are you developing or exploring alternatives to mainstream AI?' }
+      ] },
+      { num: '03', title: 'Public Policy, Governance, and Participation', items: [
+        { label: 'Sustainability Policies for the Digital and Telecom Sectors:', note: 'Are you working on sustainability rules, standards, requirements, or goals for the digital and telecom sectors? What happens when they are put into practice?' },
+        { label: 'Resilience, robustness, and sovereignty:', note: 'How can digital systems continue to function in the face of energy shortages, climate shocks, or supply disruptions? What does digital sovereignty mean to you in practice?' },
+        { label: 'Net Neutrality and Fairness:', note: 'Are you working on how regulations and protocols determine which traffic takes priority and at what speed?' },
+        { label: 'Communities, Participation, and the Commons:', note: 'Are you part of a community network or a digital cooperative, or do you work with communities to make technical democracy possible?' }
+      ] }
     ],
     datesTitle: 'Dates',
     dates: [
@@ -264,14 +278,23 @@ const STRINGS = {
     otherLink: 'partagez-les avec nous',
     otherPost: '. Nous pourrons ensuite voir comment leur cr\u00E9er un espace pendant l\u2019\u00E9v\u00E9nement.',
     themesTitle: 'Th\u00E8mes',
-    themesIntro: 'Voici quelques th\u00E8mes que nous souhaitons aborder pendant ces deux jours :',
+   themesIntro: 'Partagez un projet, un outil, une politique publique… ou même un échec riche d’enseignements autour de l’un des trois grands thèmes liés à la durabilité numérique :',
     themes: [
-      { label: 'Transitions jumelles', note: '' },
-      { label: 'Empreinte environnementale de l\u2019internet :', note: 'de la mat\u00E9rialit\u00E9 des infrastructures aux donn\u00E9es et aux questions \u00E9nerg\u00E9tiques' },
-      { label: 'Efficacit\u00E9 num\u00E9rique versus sobri\u00E9t\u00E9 num\u00E9rique', note: '' },
-      { label: 'Durabilit\u00E9 num\u00E9rique dans les politiques et la gouvernance du num\u00E9rique', note: '' },
-      { label: 'Les communs et l\u2019internet comme bien commun', note: '' },
-      { label: 'Enqu\u00EAtes et interventions ancr\u00E9es dans les communaut\u00E9s', note: '' }
+      { num: '01', title: 'Matériaux, ressources et infrastructures', items: [
+        { label: 'Infrastructures et réseaux numériques :', note: 'Antennes, câbles et réseaux mobiles consomment de l’énergie, des matériaux et de l’espace public, et sont souvent dimensionnés pour absorber les pics de demande. Avez-vous travaillé sur la consommation énergétique des réseaux, la mutualisation des infrastructures, le démantèlement d’anciens réseaux ou le vieillissement des équipements ?' },
+        { label: 'Green IT et IT for Green :', note: 'Avez-vous mesuré l’impact environnemental d’un service numérique, ou vérifié si un projet « smart » a réellement tenu ses promesses d’économies ?' },
+        { label: 'Circularité et achats responsables :', note: 'Avez-vous rédigé un cahier des charges exigeant des équipements reconditionnés ou réparables, ou gérez-vous une initiative de réparation, ou y participez-vous ?' }
+      ] },
+      { num: '02', title: 'Conception et pratiques', items: [
+        { label: 'Sobriété numérique :', note: 'Avez-vous réduit la quantité de données que vous créez, utilisez ou stockez, ou prolongé la durée de vie de vos appareils ? Développez-vous ou travaillez-vous sur des services et des appareils numériques capables de fonctionner avec moins ?' },
+        { label: 'IA alternative :', note: 'Avez-vous fait tourner un petit modèle d’IA en local, ou décidé de ne pas utiliser l’IA du tout ? Développez-vous ou explorez-vous des alternatives à l’IA dominante ?' }
+      ] },
+      { num: '03', title: 'Politiques publiques, gouvernance et participation', items: [
+        { label: 'Politiques de durabilité pour les secteurs du numérique et des télécoms :', note: 'Travaillez-vous sur des règles, des normes, des exigences ou des objectifs de durabilité pour les secteurs du numérique et des télécoms ? Que se passe-t-il lorsqu’ils sont mis en pratique ?' },
+        { label: 'Résilience, robustesse et souveraineté :', note: 'Comment les systèmes numériques peuvent-ils continuer à fonctionner face aux pénuries d’énergie, aux chocs climatiques ou aux ruptures d’approvisionnement ? Que signifie concrètement pour vous la souveraineté numérique ?' },
+        { label: 'Neutralité du net et équité :', note: 'Travaillez-vous sur la manière dont les réglementations et les protocoles déterminent quel trafic est prioritaire, et à quelle vitesse ?' },
+        { label: 'Communautés, participation et communs :', note: 'Faites-vous partie d’un réseau communautaire ou d’une coopérative numérique, ou travaillez-vous avec des communautés pour rendre possible une démocratie technique ?' }
+      ] }
     ],
     datesTitle: 'Dates',
     dates: [
@@ -317,14 +340,23 @@ const STRINGS = {
     otherLink: 'laat het ons weten',
     otherPost: '. We bekijken dan samen hoe we er tijdens het evenement ruimte voor kunnen maken.',
     themesTitle: 'Thema\u2019s',
-    themesIntro: 'Enkele thema\u2019s die we tijdens deze twee dagen willen bespreken:',
+    themesIntro: 'Deel een project, een tool, een overheidsbeleid… of zelfs een mislukking met waardevolle lessen rond een van de drie hoofdthema’s van digitale duurzaamheid:',
     themes: [
-      { label: 'Dubbele transities', note: '' },
-      { label: 'Ecologische voetafdruk van het internet:', note: 'van de materialiteit van infrastructuur tot data- en energievraagstukken' },
-      { label: 'Digitale effici\u00EBntie versus digitale soberheid', note: '' },
-      { label: 'Digitale duurzaamheid in digitaal beleid en bestuur', note: '' },
-      { label: 'Commons en het internet als gemeengoed', note: '' },
-      { label: 'Onderzoek en interventies vanuit de gemeenschap', note: '' }
+      { num: '01', title: 'Materialen, grondstoffen en infrastructuur', items: [
+        { label: 'Digitale infrastructuur en netwerken:', note: 'Antennes, kabels en mobiele netwerken verbruiken energie, materialen en publieke ruimte, en zijn vaak ontworpen voor piekbelasting. Heb je gewerkt aan het energieverbruik van netwerken, het delen van infrastructuur, het uitfaseren van oude netwerken of verouderende apparatuur?' },
+        { label: 'Green IT en IT for Green:', note: 'Heb je de milieu-impact van een digitale dienst gemeten, of nagegaan of een “smart” project de beloofde besparingen echt heeft opgeleverd?' },
+        { label: 'Circulariteit en verantwoord aankopen:', note: 'Heb je een bestek opgesteld dat gereviseerde of herstelbare apparatuur vereist, of beheer je een reparatie-initiatief of neem je eraan deel?' }
+      ] },
+      { num: '02', title: 'Ontwerp en praktijken', items: [
+        { label: 'Digitale soberheid:', note: 'Heb je de hoeveelheid data die je aanmaakt, gebruikt of opslaat verminderd, of de levensduur van je apparaten verlengd? Ontwikkel of werk je aan digitale diensten en apparaten die met minder kunnen functioneren?' },
+        { label: 'Alternatieve AI:', note: 'Heb je een klein AI-model lokaal gedraaid, of besloten helemaal geen AI te gebruiken? Ontwikkel of verken je alternatieven voor mainstream AI?' }
+      ] },
+      { num: '03', title: 'Overheidsbeleid, bestuur en participatie', items: [
+        { label: 'Duurzaamheidsbeleid voor de digitale en telecomsector:', note: 'Werk je aan duurzaamheidsregels, -normen, -vereisten of -doelstellingen voor de digitale en telecomsector? Wat gebeurt er wanneer ze in de praktijk worden gebracht?' },
+        { label: 'Veerkracht, robuustheid en soevereiniteit:', note: 'Hoe kunnen digitale systemen blijven functioneren bij energietekorten, klimaatschokken of verstoringen in de toelevering? Wat betekent digitale soevereiniteit voor jou in de praktijk?' },
+        { label: 'Netneutraliteit en eerlijkheid:', note: 'Werk je aan de manier waarop regelgeving en protocollen bepalen welk verkeer voorrang krijgt en met welke snelheid?' },
+        { label: 'Gemeenschappen, participatie en de commons:', note: 'Maak je deel uit van een gemeenschapsnetwerk of een digitale coöperatie, of werk je met gemeenschappen om technische democratie mogelijk te maken?' }
+      ] }
     ],
     datesTitle: 'Datums',
     dates: [
